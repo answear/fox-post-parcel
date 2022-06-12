@@ -2,23 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Answear\OverseasBundle\Enum;
+namespace Answear\FoxPostParcel\Response\Enum;
 
 use MabeEnum\Enum;
-use MabeEnum\EnumSerializableTrait;
 
-class DayType extends Enum implements \Serializable
+class DayType extends Enum
 {
-    use EnumSerializableTrait;
-
-    public const WORKING_DAY = 1;
-    public const MONDAY = 7;
-    public const TUESDAY = 8;
-    public const WEDNESDAY = 9;
-    public const THURSDAY = 10;
-    public const FRIDAY = 11;
-    public const SATURDAY = 2;
-    public const SUNDAY = 3;
+    public const MONDAY = 'hetfo';
+    public const TUESDAY = 'kedd';
+    public const WEDNESDAY = 'szerda';
+    public const THURSDAY = 'csutortok';
+    public const FRIDAY = 'pentek';
+    public const SATURDAY = 'szombat';
+    public const SUNDAY = 'vasarnap';
 
     public static function friday(): self
     {
@@ -53,10 +49,5 @@ class DayType extends Enum implements \Serializable
     public static function saturday(): self
     {
         return static::get(static::SATURDAY);
-    }
-
-    public static function workingDay(): self
-    {
-        return static::get(static::WORKING_DAY);
     }
 }

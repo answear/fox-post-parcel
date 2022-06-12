@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Answear\FoxPostParcel\Command;
 
 use Answear\FoxPostParcel\Client\Client;
-use Answear\FoxPostParcel\Request\GetPointsRequest;
-use Answear\FoxPostParcel\Response\GetPointsResponse;
+use Answear\FoxPostParcel\Request\GetParcelShopsRequest;
+use Answear\FoxPostParcel\Response\GetParcelShopsResponse;
 use GuzzleHttp\Psr7\Request as HttpRequest;
 use GuzzleHttp\Psr7\Uri;
 
-class GetPoints extends AbstractCommand
+class GetParcelShops extends AbstractCommand
 {
     private Client $client;
 
@@ -19,9 +19,9 @@ class GetPoints extends AbstractCommand
         $this->client = $client;
     }
 
-    public function getPoints(): GetPointsResponse
+    public function getPoints(): GetParcelShopsResponse
     {
-        $request = new GetPointsRequest();
+        $request = new GetParcelShopsRequest();
 
         $httpRequest = new HttpRequest(
             $request->getMethod(),
@@ -35,6 +35,6 @@ class GetPoints extends AbstractCommand
 
         $body = $this->getBody($response);
 
-        return GetPointsResponse::fromArray($body);
+        return GetParcelShopsResponse::fromArray($body);
     }
 }

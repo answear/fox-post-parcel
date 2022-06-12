@@ -6,7 +6,6 @@ namespace Answear\FoxPostParcel\Response\Struct;
 
 use Webmozart\Assert\Assert;
 
-
 class ParcelShopCollection implements \Countable, \IteratorAggregate
 {
     /**
@@ -14,17 +13,17 @@ class ParcelShopCollection implements \Countable, \IteratorAggregate
      */
     private array $parcelShops;
 
-    public function __construct(array $offices)
+    public function __construct(array $parcelShops)
     {
-        Assert::allIsInstanceOf($offices, ParcelShop::class);
+        Assert::allIsInstanceOf($parcelShops, ParcelShop::class);
 
-        $this->parcelShops = $offices;
+        $this->parcelShops = $parcelShops;
     }
 
     /**
-     * @return ParcelShop[]
+     * @return ParcelShop[]|\Traversable
      */
-    public function getIterator(): iterable
+    public function getIterator(): \Traversable
     {
         foreach ($this->parcelShops as $key => $office) {
             yield $key => $office;
