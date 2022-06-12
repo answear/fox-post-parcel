@@ -16,7 +16,7 @@ No setup needed.
 
 ## Usage
 
-### Get list of parcel shops *FindPoints*
+### Get list of parcel shops
 
 ```php
 /** @var \Answear\FoxPostParcel\Command\GetParcelShops $getParcelShopsCommand **/
