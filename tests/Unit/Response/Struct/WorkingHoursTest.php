@@ -23,17 +23,17 @@ class WorkingHoursTest extends TestCase
     {
         yield 'working day' => [
             '7:00-19:00',
-            new WorkingHours(DayType::monday(), true, '7:00', '19:00'),
+            WorkingHours::open(DayType::monday(), '7:00', '19:00'),
         ];
 
         yield 'working day with non breaking hyphen' => [
             '7:00–19:00',
-            new WorkingHours(DayType::monday(), true, '7:00', '19:00'),
+            WorkingHours::open(DayType::monday(), '7:00', '19:00'),
         ];
 
         yield 'closed' => [
             'zárva',
-            new WorkingHours(DayType::monday(), false, null, null),
+            WorkingHours::closed(DayType::monday()),
         ];
     }
 }

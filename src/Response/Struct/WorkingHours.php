@@ -12,7 +12,7 @@ class WorkingHours
     public ?string $from;
     public ?string $to;
 
-    public function __construct(DayType $dayType, bool $isOpen, ?string $from, ?string $to)
+    private function __construct(DayType $dayType, bool $isOpen, ?string $from, ?string $to)
     {
         $this->dayType = $dayType;
         $this->from = $from;
@@ -20,7 +20,17 @@ class WorkingHours
         $this->isOpen = $isOpen;
     }
 
-    public static function fromArray(string $day, string $workingHoursString): ?self
+    public static function open(DayType $dayType, string $from, string $to): self
+    {
+        return new self($dayType, true, $from, $to);
+    }
+
+    public static function closed(DayType $dayType): self
+    {
+        return new self($dayType, false, null, null);
+    }
+
+    public static function fromArray(string $day, string $workingHoursString): self
     {
         Assert::stringNotEmpty($day);
         Assert::stringNotEmpty($workingHoursString);
@@ -30,9 +40,9 @@ class WorkingHours
         try {
             [$from, $to] = \preg_split('/(-|–)/', $workingHoursString);
 
-            return new self($dayType, true, $from, $to);
+            return self::open($dayType, $from, $to);
         } catch (\Throwable $throwable) {
-            return new self($dayType, false, null, null);
+            return self::closed($dayType);
         }
     }
 }

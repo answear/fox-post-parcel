@@ -36,13 +36,13 @@ trait ResponseTrait
         $parcelShop->isOutdoor = true;
         $parcelShop->apmType = ApmType::unknown();
         $parcelShop->workingHours = [
-            new WorkingHours(DayType::monday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::tuesday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::wednesday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::thursday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::friday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::saturday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::sunday(), true, '00:00', '24:00'),
+            WorkingHours::open(DayType::monday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::tuesday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::wednesday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::thursday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::friday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::saturday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::sunday(), '00:00', '24:00'),
         ];
 
         return $parcelShop;
@@ -67,13 +67,13 @@ trait ResponseTrait
         $parcelShop->isOutdoor = true;
         $parcelShop->apmType = ApmType::rollkon();
         $parcelShop->workingHours = [
-            new WorkingHours(DayType::monday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::tuesday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::wednesday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::thursday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::friday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::saturday(), true, '00:00', '24:00'),
-            new WorkingHours(DayType::sunday(), true, '00:00', '24:00'),
+            WorkingHours::open(DayType::monday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::tuesday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::wednesday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::thursday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::friday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::saturday(), '00:00', '24:00'),
+            WorkingHours::open(DayType::sunday(), '00:00', '24:00'),
         ];
 
         return $parcelShop;
