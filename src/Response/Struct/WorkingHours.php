@@ -8,9 +8,9 @@ use Webmozart\Assert\Assert;
 class WorkingHours
 {
     public DayType $dayType;
+    public bool $isOpen;
     public ?string $from;
     public ?string $to;
-    public bool $isOpen;
 
     public function __construct(DayType $dayType, bool $isOpen, ?string $from, ?string $to)
     {
