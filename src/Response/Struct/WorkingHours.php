@@ -8,14 +8,16 @@ use Webmozart\Assert\Assert;
 class WorkingHours
 {
     public DayType $dayType;
-    public string $from;
-    public string $to;
+    public ?string $from;
+    public ?string $to;
+    public bool $isOpen;
 
-    public function __construct(DayType $dayType, string $from, string $to)
+    public function __construct(DayType $dayType, bool $isOpen, ?string $from, ?string $to)
     {
         $this->dayType = $dayType;
         $this->from = $from;
         $this->to = $to;
+        $this->isOpen = $isOpen;
     }
 
     public static function fromArray(string $day, string $workingHoursString): ?self
@@ -27,10 +29,10 @@ class WorkingHours
 
         try {
             [$from, $to] = \preg_split('/(-|–)/', $workingHoursString);
-        } catch (\Throwable $throwable) {
-            return null;
-        }
 
-        return new self($dayType, $from, $to);
+            return new self($dayType, true, $from, $to);
+        } catch (\Throwable $throwable) {
+            return new self($dayType, false, null, null);
+        }
     }
 }
