@@ -9,9 +9,9 @@
         "guzzlehttp/guzzle": "^6.0|^7.0",
         "marc-mabe/php-enum": "^3.0|^4.3",
         "psr/log": "^1.0",
-        "symfony/http-kernel": "^4.4|^5.1.5",
-        "symfony/property-info": "^4.4|^5.0",
-        "symfony/serializer": "^4.4|^5.0",
+        "symfony/http-kernel": "^5.4|^6.0",
+        "symfony/property-info": "^5.4|^6.0",
+        "symfony/serializer": "^5.4|^6.0",
         "webmozart/assert": "^1.10"
     },
     "require-dev": {
@@ -22,7 +22,7 @@
         "phpstan/phpstan-webmozart-assert": "^1.0",
         "phpunit/phpunit": "^9.5",
         "roave/security-advisories": "dev-master",
-        "symfony/phpunit-bridge": "^5.3"
+        "symfony/phpunit-bridge": "6.1.*"
     },
     "autoload": {
         "psr-4": {
