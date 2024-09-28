@@ -9,6 +9,7 @@ use Answear\FoxPostParcel\Tests\Traits\MockGuzzleTrait;
 use Answear\FoxPostParcel\Tests\Traits\ResponseTrait;
 use Answear\FoxPostParcel\Tests\Util\FileUtil;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class GetParcelShopsTest extends TestCase
@@ -16,9 +17,7 @@ class GetParcelShopsTest extends TestCase
     use MockGuzzleTrait;
     use ResponseTrait;
 
-    /**
-     * @test
-     */
+    #[Test]
     public function successfullyGetPoints(): void
     {
         $command = $this->getCommand();

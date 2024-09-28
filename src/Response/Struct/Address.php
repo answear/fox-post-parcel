@@ -4,13 +4,16 @@ namespace Answear\FoxPostParcel\Response\Struct;
 
 use Webmozart\Assert\Assert;
 
-class Address
+readonly class Address
 {
-    public string $zipCode;
-    public string $city;
-    public string $street;
-    public string $fullAddress;
-    public ?string $addressDescription;
+    public function __construct(
+        public string $zipCode,
+        public string $city,
+        public string $street,
+        public string $fullAddress,
+        public ?string $addressDescription,
+    ) {
+    }
 
     public static function fromArray(array $parcelShopData): self
     {
@@ -20,14 +23,12 @@ class Address
         Assert::stringNotEmpty($parcelShopData['address']);
         Assert::string($parcelShopData['findme']);
 
-        $address = new self();
-
-        $address->zipCode = $parcelShopData['zip'];
-        $address->city = $parcelShopData['city'];
-        $address->street = $parcelShopData['street'];
-        $address->fullAddress = $parcelShopData['address'];
-        $address->addressDescription = empty($parcelShopData['findme']) ? null : $parcelShopData['findme'];
-
-        return $address;
+        return new self(
+            $parcelShopData['zip'],
+            $parcelShopData['city'],
+            $parcelShopData['street'],
+            $parcelShopData['address'],
+            empty($parcelShopData['findme']) ? null : $parcelShopData['findme']
+        );
     }
 }

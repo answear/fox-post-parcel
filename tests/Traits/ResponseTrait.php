@@ -19,63 +19,57 @@ trait ResponseTrait
 
     private function getFirstParcelShop(): ParcelShop
     {
-        $parcelShop = new ParcelShop();
-        $parcelShop->placeId = 630087;
-        $parcelShop->operatorId = 'hu1510';
-        $parcelShop->name = 'Nyíregyháza MOL Vasgyár utca';
-        $parcelShop->coordinates = new Coordinates(47.954398, 21.704269);
-
-        $address = new Address();
-        $address->zipCode = '4400';
-        $address->city = 'Nyíregyháza';
-        $address->street = 'Vasgyár utca 18.';
-        $address->fullAddress = '4400 Nyíregyháza, Vasgyár utca 18.';
-        $address->addressDescription = 'HU1510 számú kültéri automatánk a benzinkút épülete mellett, a Vasgyár utca felől található.';
-
-        $parcelShop->address = $address;
-        $parcelShop->isOutdoor = true;
-        $parcelShop->apmType = ApmType::unknown();
-        $parcelShop->workingHours = [
-            WorkingHours::open(DayType::monday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::tuesday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::wednesday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::thursday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::friday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::saturday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::sunday(), '00:00', '24:00'),
-        ];
-
-        return $parcelShop;
+        return new ParcelShop(
+            630087,
+            'hu1510',
+            'Nyíregyháza MOL Vasgyár utca',
+            new Coordinates(47.954398, 21.704269),
+            new Address(
+                '4400',
+                'Nyíregyháza',
+                'Vasgyár utca 18.',
+                '4400 Nyíregyháza, Vasgyár utca 18.',
+                'HU1510 számú kültéri automatánk a benzinkút épülete mellett, a Vasgyár utca felől található.'
+            ),
+            true,
+            ApmType::Unknown,
+            [
+                WorkingHours::open(DayType::Monday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Tuesday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Wednesday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Thursday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Friday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Saturday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Sunday, '00:00', '24:00'),
+            ]
+        );
     }
 
     private function getSecondParcelShop(): ParcelShop
     {
-        $parcelShop = new ParcelShop();
-        $parcelShop->placeId = 629492;
-        $parcelShop->operatorId = 'hu1508';
-        $parcelShop->name = 'Győr Tesco Szigethy Attila út';
-        $parcelShop->coordinates = new Coordinates(47.677188, 17.653352);
-
-        $address = new Address();
-        $address->zipCode = '9023';
-        $address->city = 'Győr';
-        $address->street = 'Szigethy Attila út 112.';
-        $address->fullAddress = '9023 Győr, Szigethy Attila út 112.';
-        $address->addressDescription = 'HU1508 számú kültéri automatánk az áruház bejáratától balra, a Szigethy út felől található.';
-
-        $parcelShop->address = $address;
-        $parcelShop->isOutdoor = true;
-        $parcelShop->apmType = ApmType::rollkon();
-        $parcelShop->workingHours = [
-            WorkingHours::open(DayType::monday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::tuesday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::wednesday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::thursday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::friday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::saturday(), '00:00', '24:00'),
-            WorkingHours::open(DayType::sunday(), '00:00', '24:00'),
-        ];
-
-        return $parcelShop;
+        return new ParcelShop(
+            629492,
+            'hu1508',
+            'Győr Tesco Szigethy Attila út',
+            new Coordinates(47.677188, 17.653352),
+            new Address(
+                '9023',
+                'Győr',
+                'Szigethy Attila út 112.',
+                '9023 Győr, Szigethy Attila út 112.',
+                'HU1508 számú kültéri automatánk az áruház bejáratától balra, a Szigethy út felől található.'
+            ),
+            true,
+            ApmType::Rollkon,
+            [
+                WorkingHours::open(DayType::Monday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Tuesday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Wednesday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Thursday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Friday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Saturday, '00:00', '24:00'),
+                WorkingHours::open(DayType::Sunday, '00:00', '24:00'),
+            ]
+        );
     }
 }
