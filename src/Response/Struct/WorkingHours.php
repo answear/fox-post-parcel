@@ -5,19 +5,14 @@ namespace Answear\FoxPostParcel\Response\Struct;
 use Answear\FoxPostParcel\Response\Enum\DayType;
 use Webmozart\Assert\Assert;
 
-class WorkingHours
+readonly class WorkingHours
 {
-    public DayType $dayType;
-    public bool $isOpen;
-    public ?string $from;
-    public ?string $to;
-
-    private function __construct(DayType $dayType, bool $isOpen, ?string $from, ?string $to)
-    {
-        $this->dayType = $dayType;
-        $this->from = $from;
-        $this->to = $to;
-        $this->isOpen = $isOpen;
+    private function __construct(
+        public DayType $dayType,
+        public bool $isOpen,
+        public ?string $from,
+        public ?string $to,
+    ) {
     }
 
     public static function open(DayType $dayType, string $from, string $to): self
@@ -35,13 +30,13 @@ class WorkingHours
         Assert::stringNotEmpty($day);
         Assert::stringNotEmpty($workingHoursString);
 
-        $dayType = DayType::byValue($day);
+        $dayType = DayType::from($day);
 
         try {
             [$from, $to] = \preg_split('/(-|–)/', $workingHoursString);
 
             return self::open($dayType, $from, $to);
-        } catch (\Throwable $throwable) {
+        } catch (\Throwable) {
             return self::closed($dayType);
         }
     }

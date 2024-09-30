@@ -7,18 +7,16 @@ namespace Answear\FoxPostParcel\Response;
 use Answear\FoxPostParcel\Response\Struct\ParcelShop;
 use Answear\FoxPostParcel\Response\Struct\ParcelShopCollection;
 
-class GetParcelShopsResponse
+readonly class GetParcelShopsResponse
 {
-    public ParcelShopCollection $parcelShopCollection;
-
-    public function __construct(ParcelShopCollection $parcelShopCollection)
-    {
-        $this->parcelShopCollection = $parcelShopCollection;
+    public function __construct(
+        public ParcelShopCollection $parcelShopCollection,
+    ) {
     }
 
     public static function fromArray(array $arrayResponse): self
     {
-        return new self(new ParcelShopCollection(\array_map(fn($pointData) => ParcelShop::fromArray($pointData), $arrayResponse)));
+        return new self(new ParcelShopCollection(\array_map(static fn($pointData) => ParcelShop::fromArray($pointData), $arrayResponse)));
     }
 
     public function getParcelShopCollection(): ParcelShopCollection
