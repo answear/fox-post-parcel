@@ -3,12 +3,9 @@
         "place_id": 630087,
         "operator_id": "hu1510",
         "name": "Nyíregyháza MOL Vasgyár utca",
-        "vapt": "",
-        "olapt": "",
-        "japt": "",
         "ssapt": "",
         "sdapt": "",
-        "group": "Nyíregyháza",
+        "country": "hu",
         "address": "4400 Nyíregyháza, Vasgyár utca 18.",
         "zip": "4400",
         "city": "Nyíregyháza",
@@ -17,10 +14,12 @@
         "geolat": 47.954398,
         "geolng": 21.704269,
         "allowed2": "ALL",
+        "depot": "Maglód Depo",
         "load": "normal loaded",
         "isOutdoor": true,
-        "apmType": "",
+        "apmType": "Unknown",
         "substitutes": [],
+        "cardPayment": true,
         "open": {
             "hetfo": "00:00-24:00",
             "kedd": "00:00-24:00",
@@ -30,23 +29,32 @@
             "szombat": "00:00-24:00",
             "vasarnap": "00:00-24:00"
         },
+        "iconUrl": "https://cdn.foxpost.hu/icons/FOXPOST_icon_low.png",
         "fillEmptyList": [
             {
-                "emptying": "07:30:00",
-                "filling": "08:30:00"
+                "emptying": "09:00:00",
+                "filling": "10:00:00"
             }
-        ]
+        ],
+        "cashPayment": false,
+        "variant": "FOXPOST",
+        "paymentOptions": [
+            "card"
+        ],
+        "paymentOptionsString": "Fizetés bankkártyával",
+        "service": [
+            "pick up",
+            "dispatch"
+        ],
+        "serviceString": "Csomagfeladás és -átvétel"
     },
     {
         "place_id": 629492,
         "operator_id": "hu1508",
         "name": "Győr Tesco Szigethy Attila út",
-        "vapt": "",
-        "olapt": "",
-        "japt": "",
         "ssapt": "",
         "sdapt": "",
-        "group": "Győr",
+        "country": "hu",
         "address": "9023 Győr, Szigethy Attila út 112.",
         "zip": "9023",
         "city": "Győr",
@@ -55,10 +63,12 @@
         "geolat": 47.677188,
         "geolng": 17.653352,
         "allowed2": "ALL",
+        "depot": "Székesfehérvár Depo",
         "load": "normal loaded",
         "isOutdoor": true,
         "apmType": "Rollkon",
         "substitutes": [],
+        "cardPayment": true,
         "open": {
             "hetfo": "00:00-24:00",
             "kedd": "00:00-24:00",
@@ -68,11 +78,23 @@
             "szombat": "00:00-24:00",
             "vasarnap": "00:00-24:00"
         },
+        "iconUrl": "https://cdn.foxpost.hu/icons/FOXPOST_icon_low.png",
         "fillEmptyList": [
             {
-                "emptying": "09:30:00",
-                "filling": "10:30:00"
+                "emptying": "12:30:00",
+                "filling": "13:30:00"
             }
-        ]
+        ],
+        "cashPayment": false,
+        "variant": "FOXPOST",
+        "paymentOptions": [
+            "card"
+        ],
+        "paymentOptionsString": "Fizetés bankkártyával",
+        "service": [
+            "pick up",
+            "dispatch"
+        ],
+        "serviceString": "Csomagfeladás és -átvétel"
     }
 ]
