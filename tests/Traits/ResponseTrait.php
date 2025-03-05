@@ -66,9 +66,9 @@ trait ResponseTrait
                 WorkingHours::open(DayType::Tuesday, '00:00', '24:00'),
                 WorkingHours::open(DayType::Wednesday, '00:00', '24:00'),
                 WorkingHours::open(DayType::Thursday, '00:00', '24:00'),
-                WorkingHours::open(DayType::Friday, '00:00', '24:00'),
+                WorkingHours::closed(DayType::Friday),
                 WorkingHours::open(DayType::Saturday, '00:00', '24:00'),
-                WorkingHours::open(DayType::Sunday, '00:00', '24:00'),
+                WorkingHours::closed(DayType::Sunday,),
             ]
         );
     }
