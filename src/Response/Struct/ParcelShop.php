@@ -31,7 +31,6 @@ readonly class ParcelShop
         Assert::float($parcelShopData['geolng']);
         Assert::boolean($parcelShopData['isOutdoor']);
         Assert::string($parcelShopData['apmType']);
-        Assert::allNotEmpty($parcelShopData['open']);
 
         $workingHours = [];
         foreach ($parcelShopData['open'] as $day => $workingHoursString) {

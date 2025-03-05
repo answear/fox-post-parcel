@@ -28,9 +28,11 @@ readonly class WorkingHours
     public static function fromArray(string $day, string $workingHoursString): self
     {
         Assert::stringNotEmpty($day);
-        Assert::stringNotEmpty($workingHoursString);
-
         $dayType = DayType::from($day);
+
+        if (empty($workingHoursString)) {
+            return self::closed($dayType);
+        }
 
         try {
             [$from, $to] = \preg_split('/(-|–)/', $workingHoursString);

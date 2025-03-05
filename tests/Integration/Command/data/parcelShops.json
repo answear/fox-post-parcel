@@ -74,9 +74,9 @@
             "kedd": "00:00-24:00",
             "szerda": "00:00-24:00",
             "csutortok": "00:00-24:00",
-            "pentek": "00:00-24:00",
+            "pentek": "",
             "szombat": "00:00-24:00",
-            "vasarnap": "00:00-24:00"
+            "vasarnap": ""
         },
         "iconUrl": "https://cdn.foxpost.hu/icons/FOXPOST_icon_low.png",
         "fillEmptyList": [
