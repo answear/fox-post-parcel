@@ -6,7 +6,7 @@ namespace Answear\FoxPostParcel\Request;
 
 class GetParcelShopsRequest implements Request
 {
-    private const URL = 'https://cdn.foxpost.hu/foxplus_en.json';
+    private const URL = 'https://cdn.foxpost.hu/foxplus.json';
     private const HTTP_METHOD = 'GET';
 
     public function getRequestUrl(): string
