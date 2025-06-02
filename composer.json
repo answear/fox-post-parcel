@@ -4,23 +4,23 @@
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.0|^7.0",
-        "symfony/http-kernel": "^6.0|^7.1",
-        "symfony/property-info": "^6.0|^7.1",
-        "symfony/serializer": "^6.0|^7.1",
+        "guzzlehttp/guzzle": "^7.0",
+        "symfony/http-kernel": "^7.1",
+        "symfony/property-info": "^7.1",
+        "symfony/serializer": "^7.1",
         "webmozart/assert": "^1.11"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.64",
         "matthiasnoback/symfony-config-test": "^5.2",
         "phpro/grumphp": "^2.8",
-        "phpstan/phpstan": "^1.12",
-        "phpstan/phpstan-webmozart-assert": "^1.2",
-        "phpunit/phpunit": "^10.5",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-webmozart-assert": "^2.0",
+        "phpunit/phpunit": "^10.5.27",
         "roave/security-advisories": "dev-master",
-        "symfony/phpunit-bridge": "6.1.*|^7.1"
+        "symfony/phpunit-bridge": "^7.1"
     },
     "autoload": {
         "psr-4": {

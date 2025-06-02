@@ -13,8 +13,8 @@ use Psr\Http\Message\ResponseInterface;
 
 class Client
 {
-    private const CONNECTION_TIMEOUT = 10;
-    private const TIMEOUT = 30;
+    private const int CONNECTION_TIMEOUT = 10;
+    private const int TIMEOUT = 30;
     
     private ClientInterface $client;
 
