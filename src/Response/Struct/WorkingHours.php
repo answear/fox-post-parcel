@@ -35,9 +35,16 @@ readonly class WorkingHours
         }
 
         try {
-            [$from, $to] = \preg_split('/(-|–)/', $workingHoursString);
+            if (false === ($parts = \preg_split('/(-|–)/', $workingHoursString))) {
+                return self::closed($dayType);
+            }
 
-            return self::open($dayType, $from, $to);
+            if (count($parts) === 2) {
+                [$from, $to] = $parts;
+                return self::open($dayType, $from, $to);
+            }
+
+            return self::closed($dayType);
         } catch (\Throwable) {
             return self::closed($dayType);
         }

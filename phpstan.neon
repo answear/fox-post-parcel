@@ -3,5 +3,8 @@ includes:
 
 parameters:
     level: 5
+    checkNullables: true
+    checkUnionTypes: true
+    treatPhpDocTypesAsCertain: false
     paths:
         - %rootDir%/../../../src
