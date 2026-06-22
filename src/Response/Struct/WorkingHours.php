@@ -39,8 +39,9 @@ readonly class WorkingHours
                 return self::closed($dayType);
             }
 
-            if (count($parts) === 2) {
+            if (2 === count($parts)) {
                 [$from, $to] = $parts;
+
                 return self::open($dayType, $from, $to);
             }
 
